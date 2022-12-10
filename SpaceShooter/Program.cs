@@ -23,7 +23,7 @@ namespace SpaceShooter
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new SpaceShooter());
+            Application.Run(new MainMenu());
         }
     }
 }

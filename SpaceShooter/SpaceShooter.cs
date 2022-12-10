@@ -61,7 +61,9 @@ namespace SpaceShooter
             else
             {
                 GameTimer.Stop();
-                //game over stuff
+                GameOver gameOver = new GameOver(score);
+                gameOver.ShowDialog();
+                this.Close();
             }
 
 
