@@ -55,7 +55,6 @@
     <Compile Include="Bullet.cs" />
     <Compile Include="BulletGrey.cs" />
     <Compile Include="CollisionManager.cs" />
-    <Compile Include="EnemyMovement.cs" />
     <Compile Include="BulletGreen.cs" />
     <Compile Include="GameOver.cs">
       <SubType>Form</SubType>

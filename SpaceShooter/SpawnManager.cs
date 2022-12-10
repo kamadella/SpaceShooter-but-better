@@ -10,32 +10,47 @@ namespace SpaceShooter
     public class SpawnManager
     {
         SpaceShooter gameScreen;
-        List<int> possible = new List<int>() {0,2 };
-        public SpawnManager(SpaceShooter game)
+        Random rand = new Random();
+        List<int> possible = new List<int>() {0, 50, 100, 150, 200, 250, 300, 350, 400, 450, 500 }; //na jakiej szerokosci moga sie spawnowac aka 11 potworkow w 1 linii
+        public SpawnManager(SpaceShooter game, int Aliens)
         {
-            gameScreen= game;
-            
-            /*
-            List<int> listNumbers = new List<int>();
-            for (int i = 0; i < 6; i++)
+            gameScreen = game;
+
+            List<int> listNumbers1 = new List<int>(possible);
+            List<int> listNumbers2 = new List<int>(possible);
+            int index;
+            for (int i = 0; i < Aliens; i++)  //tworzymy iles potworow 
             {
-                int index = rand.Next(0, possible.Count);
-                listNumbers.Add(possible[index]);
-                possible.RemoveAt(index);
+                if (i < 11) //gdy mieszcza sie w 1 linii
+                {
+                    index = rand.Next(0, listNumbers1.Count);
+                    SpawnOrangeAlien(listNumbers1[index], 50);
+                    
+                    listNumbers1.RemoveAt(index);
+                }
+                else
+                {
+                    index = rand.Next(0, listNumbers2.Count);
+                    SpawnOrangeAlien(listNumbers2[index], 120);
+                    
+                    listNumbers2.RemoveAt(index);
+                }
+
             }
-            */
-            SpawnOrangeAlien();
+            
+            
             //SpawnGreenAlien();
             //SpawnPinkAlien();
             //SpawnRedAlien();
             //SpawnBlueAlien();
         }
 
-        private void SpawnOrangeAlien()
+        private void SpawnOrangeAlien(int width, int height)
         {
             Alien alien = new AlienOrange();
-            alien.SpawnAlien(gameScreen);
+            alien.SpawnAlien(gameScreen, width, height);
         }
+        /*
         private void SpawnRedAlien()
         {
             Alien alien = new AlienRed();
@@ -56,5 +71,6 @@ namespace SpaceShooter
             Alien alien = new AlienGreen();
             alien.SpawnAlien(gameScreen);
         }
+        */
     }
 }

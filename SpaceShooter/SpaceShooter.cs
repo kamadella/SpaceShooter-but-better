@@ -14,23 +14,23 @@ namespace SpaceShooter
     {
         SpawnManager spawnManage;
         CollisionManager collisionManage;
-        EnemyMovement movementManage;
 
         bool goLeft, goRight;
 
         int playerLife = 100;
         int speed = 10;
         int score = 0;
+        int level = 1;
 
         public SpawnManager SpawnManage { get => spawnManage;}
         public int PlayerLife { get => playerLife; set => playerLife = value; }
         public int Score { get => score; set => score = value; }
+        public int Level { get => level; set => level = value; }
 
         public SpaceShooter()
         {
-            spawnManage= new SpawnManager(this);
+            spawnManage= new SpawnManager(this, 13);
             collisionManage= new CollisionManager(this);
-            movementManage = new EnemyMovement();
 
             InitializeComponent();
         }
@@ -74,7 +74,7 @@ namespace SpaceShooter
             player.BringToFront();
             isPlayerAlive();
             LabelScore.Text = "Punkty: " + Score;
-
+            LabelLevel.Text = "Level: " + Level;
             MovePlayer();
             collisionManage.DetectCollision();
         }

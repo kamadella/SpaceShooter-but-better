@@ -15,14 +15,14 @@ namespace SpaceShooter
         Form gameScreen;
         Random random = new Random();
 
-        public override void SpawnAlien(Form form)
+        public override void SpawnAlien(Form form, int width, int height)
         {
-            base.SpawnAlien(form);
-            AlienSpawn.Left = 150;
-            AlienSpawn.Top = 50;
+            base.SpawnAlien(form, width, height);
+            AlienSpawn.Left = width;
+            AlienSpawn.Top = height;
 
             gameScreen = form;
-            AlienSpawn.Image = Properties.Resources.alien5;
+            AlienSpawn.Image = Properties.Resources.alien1;
             gameScreen.Controls.Add(AlienSpawn);
             AlienSpawn.BringToFront();
 
