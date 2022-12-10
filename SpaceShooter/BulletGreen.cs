@@ -7,12 +7,12 @@ using System.Windows.Forms;
 
 namespace SpaceShooter
 {
-    class BulletGrey : Bullet
+    class BulletGreen : Bullet
     {
         public override void CreateBullet(Form form)
         {
-            CurrentBullet.Image = Properties.Resources.bullet;
-            CurrentBullet.Tag = "playerBullet";
+            CurrentBullet.Image = Properties.Resources.alien_bullet;
+            CurrentBullet.Tag = "alienBullet";
             CurrentBullet.SizeMode = PictureBoxSizeMode.AutoSize;
             base.CreateBullet(form);
         }

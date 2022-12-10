@@ -28,8 +28,8 @@ namespace SpaceShooter
 
         public SpaceShooter()
         {
-            spawnManage= new SpawnManager();
-            collisionManage= new CollisionManager();
+            spawnManage= new SpawnManager(this);
+            collisionManage= new CollisionManager(this);
             movementManage = new EnemyMovement();
 
             InitializeComponent();
@@ -74,6 +74,7 @@ namespace SpaceShooter
             LabelScore.Text = "Punkty: " + Score;
 
             MovePlayer();
+            collisionManage.DetectCollision();
         }
 
         private void isKeyDown(object sender, KeyEventArgs e)
@@ -108,10 +109,12 @@ namespace SpaceShooter
         }
 
 
+
         private void ShootBullet()
         {
             Bullet newBullet = new BulletGrey();
-            newBullet.BulletPosLeft = player.Left + (player.Width / 2);
+            newBullet.Direction = Direction.up;
+            newBullet.BulletPosLeft = player.Left + (player.Width / 3);
             newBullet.BulletPosTop = player.Top + (player.Height / 2);
             newBullet.CreateBullet(this);
         }

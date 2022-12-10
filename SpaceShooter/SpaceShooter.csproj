@@ -46,10 +46,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Alien.cs" />
+    <Compile Include="AlienBlue.cs" />
+    <Compile Include="AlienGreen.cs" />
+    <Compile Include="AlienOrange.cs" />
+    <Compile Include="AlienPink.cs" />
+    <Compile Include="AlienRed.cs" />
     <Compile Include="Bullet.cs" />
     <Compile Include="BulletGrey.cs" />
     <Compile Include="CollisionManager.cs" />
     <Compile Include="EnemyMovement.cs" />
+    <Compile Include="BulletGreen.cs" />
     <Compile Include="SpaceShooter.cs">
       <SubType>Form</SubType>
     </Compile>

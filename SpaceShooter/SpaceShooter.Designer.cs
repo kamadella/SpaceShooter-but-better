@@ -44,7 +44,7 @@
             this.LabelScore.ForeColor = System.Drawing.Color.White;
             this.LabelScore.Location = new System.Drawing.Point(12, 9);
             this.LabelScore.Name = "LabelScore";
-            this.LabelScore.Size = new System.Drawing.Size(130, 35);
+            this.LabelScore.Size = new System.Drawing.Size(190, 35);
             this.LabelScore.TabIndex = 0;
             this.LabelScore.Text = "Punkty: 0";
             // 

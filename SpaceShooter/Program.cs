@@ -9,7 +9,9 @@ namespace SpaceShooter
     public enum Direction
     {
         left,
-        right
+        right,
+        up, 
+        down
     }
     internal static class Program
     {
