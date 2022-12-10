@@ -24,7 +24,8 @@ namespace SpaceShooter
         {
             alien = new PictureBox();
             AlienSpawn.Tag = "alien";
-            AlienSpawn.SizeMode = PictureBoxSizeMode.AutoSize;
+            AlienSpawn.Size = new Size(50,50);
+            AlienSpawn.SizeMode = PictureBoxSizeMode.StretchImage;
         }
     }
 }
